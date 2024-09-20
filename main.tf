@@ -49,7 +49,7 @@ resource "aws_instance" "app_server" {
   vpc_security_group_ids = [aws_security_group.allow_ssh.id] # Asigna el Security Group
 
   tags = {
-    Name = "ExampleAppServerInstance"
+    Name = "ServerDeEjemploTerra"
   }
 }
 
