@@ -48,6 +48,9 @@ resource "aws_instance" "app_server" {
 
   vpc_security_group_ids = [aws_security_group.allow_ssh.id] # Asigna el Security Group
 
+  # Cargar el archivo .sh como user_data
+  user_data = file("${path.module}/setup_password_auth.sh")
+
   tags = {
     Name = "ServerDeEjemploTerra"
   }
