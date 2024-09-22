@@ -9,3 +9,5 @@ systemctl restart ssh
 
 # Cambiar la contraseña del usuario 'ubuntu'
 echo "ubuntu:3141592654" | chpasswd
+# pruebo si crea archivo
+mkdir /home/ubuntu/PROYECTOS
