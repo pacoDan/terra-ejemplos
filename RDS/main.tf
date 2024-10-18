@@ -78,7 +78,7 @@ resource "aws_security_group" "this" {
   }
 
   tags = {
-    Name = "MyRDSGroup"
+    Name = "MyRDSGroup-example"
   }
 }
 
@@ -121,4 +121,8 @@ output "password" {
 
 output "jdbc_connection_string" {
   value = "jdbc:mysql://${aws_db_instance.this.endpoint}/servicio2?user=${var.db_username}&password=${var.db_password}"
+}
+# Nuevo output para el comando de conexión MySQL
+output "mysql_connection_command" {
+  value = "mysql -h ${aws_db_instance.this.endpoint} -P 3306 -u ${var.db_username} -p${var.db_password} ${var.db_name}"
 }
